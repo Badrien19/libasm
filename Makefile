@@ -6,11 +6,11 @@
 #    By: badrien <badrien@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 14:08:50 by badrien           #+#    #+#              #
-#    Updated: 2020/10/23 14:15:35 by badrien          ###   ########.fr        #
+#    Updated: 2020/10/23 15:05:43 by badrien          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	
+SRCS =	ft_strlen.s
 
 OBJS = ${SRCS:.s=.o}
 
@@ -38,6 +38,9 @@ fclean: 	clean
 			${RM} ${NAME}
 
 re: fclean all
+
+test:	${NAME}
+		gcc -Wall -Werror -Wextra -L. -lasm -o test main.c
 
 %.o: %.s
 	${ASM} ${FLAG} $<
