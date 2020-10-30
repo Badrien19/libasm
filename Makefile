@@ -6,11 +6,11 @@
 #    By: badrien <badrien@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 14:08:50 by badrien           #+#    #+#              #
-#    Updated: 2020/10/23 15:05:43 by badrien          ###   ########.fr        #
+#    Updated: 2020/10/30 14:40:57 by badrien          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_strlen.s
+SRCS =	ft_strlen.s ft_strcpy.s
 
 OBJS = ${SRCS:.s=.o}
 
