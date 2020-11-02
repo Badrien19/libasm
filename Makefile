@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: badrien <badrien@student.42.fr>            +#+  +:+       +#+         #
+#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 14:08:50 by badrien           #+#    #+#              #
-#    Updated: 2020/10/30 14:40:57 by badrien          ###   ########.fr        #
+#    Updated: 2020/11/02 15:52:47 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ASM = nasm
 
 FLAG = -f elf64 #linux
 
-LIB = ar rc
+LIB = ar -rcs
 
 RM = rm -rf
 
@@ -34,18 +34,20 @@ ${NAME}:	${OBJS}
 			${LIB} ${NAME} ${OBJS}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} main.o
 
 fclean: 	clean
-			${RM} ${NAME}
-
+			${RM} ${NAME} test
+			
 re: fclean all
 
-test:	${NAME} #linux
-		gcc -no-pie main.c -L. -lasm
+test:	${NAME} #Linux
+		gcc main.c -c
+		gcc -Wall -Werror -Wextra -L. -o test main.o libasm.a
+		./test
 
 #test:	${NAME} #MacOs
 #		gcc -Wall -Werror -Wextra -L. -lasm -o test main.c
 
 %.o: %.s
-	${ASM} ${FLAG} $<
+	${ASM} ${FLAG} $< -o $@

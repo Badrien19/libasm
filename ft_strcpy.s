@@ -1,7 +1,6 @@
-				section .text
-				global _ft_strcpy
+				global ft_strcpy
 
-_ft_strcpy:										; dst = rdi, src = rsi
+ft_strcpy:										; dst = rdi, src = rsi
 				xor rcx, rcx					; met i a 0
 				xor rdx, rdx					; met tmp a 0
 				cmp rsi, 0

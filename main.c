@@ -3,26 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: badrien <badrien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 14:50:59 by badrien           #+#    #+#             */
-/*   Updated: 2020/10/30 14:49:41 by badrien          ###   ########.fr       */
+/*   Updated: 2020/11/02 15:44:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libasm.h"
 
-size_t		ft_strlen(const char *str);
-char	*ft_strcpy(const char *dst, const char *src);
-
-int main()
+int main(void)
 {
 	char buffer[100];
 
