@@ -18,13 +18,15 @@ NAME = libasm.a
 
 ASM = nasm
 
-FLAG = -f macho64
+#FLAG = -f macho64 #MacOs
+
+FLAG = -f elf64 #linux
 
 LIB = ar rc
 
 RM = rm -rf
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 all:	${NAME}
 
@@ -39,8 +41,11 @@ fclean: 	clean
 
 re: fclean all
 
-test:	${NAME}
-		gcc -Wall -Werror -Wextra -L. -lasm -o test main.c
+test:	${NAME} #linux
+		gcc -no-pie main.c -L. -lasm
+
+#test:	${NAME} #MacOs
+#		gcc -Wall -Werror -Wextra -L. -lasm -o test main.c
 
 %.o: %.s
 	${ASM} ${FLAG} $<

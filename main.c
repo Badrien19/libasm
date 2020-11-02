@@ -10,20 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include <stdio.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
 
-int		ft_strlen(char const *str);
-char		*ft_strcpy(char *dst, const char *src);
+size_t		ft_strlen(const char *str);
+char	*ft_strcpy(const char *dst, const char *src);
 
 int main()
 {
 	char buffer[100];
-	printf("%s = (%d) = (%lu)\n", "test", ft_strlen("test"), strlen("test"));
+
+	printf("/* strlen */");
+	printf("'%s' -> (%ld) = (%lu)\n", "test", ft_strlen("test"), strlen("test"));
 	
-	printf("`%s` (`toto`)\n", ft_strcpy(buffer, "toto"));
+	printf("/* strcpy */");
+	printf("'%s' = ('toto')\n", ft_strcpy(buffer, "toto"));
 
 	return (0);
 }
