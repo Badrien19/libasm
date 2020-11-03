@@ -6,11 +6,11 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 14:08:50 by badrien           #+#    #+#              #
-#    Updated: 2020/11/02 15:52:47 by user42           ###   ########.fr        #
+#    Updated: 2020/11/03 14:14:04 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_strlen.s ft_strcpy.s
+SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s
 
 OBJS = ${SRCS:.s=.o}
 
