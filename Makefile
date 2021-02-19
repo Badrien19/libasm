@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: badrien <badrien@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/23 14:08:50 by badrien           #+#    #+#              #
-#    Updated: 2020/11/03 14:14:04 by user42           ###   ########.fr        #
+#    Updated: 2021/02/19 14:20:27 by badrien          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s
+SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s ft_write.s ft_strdup.s
 
 OBJS = ${SRCS:.s=.o}
 
@@ -41,7 +41,7 @@ fclean: 	clean
 			
 re: fclean all
 
-test:	${NAME} #Linux
+test:	re
 		gcc main.c -c
 		gcc -Wall -Werror -Wextra -L. -o test main.o libasm.a
 		./test
