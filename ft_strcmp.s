@@ -1,7 +1,7 @@
 				section .text
 				global ft_strcmp
 
-ft_strcmp:                         ; ; s1 = rdi, s2 = rsi rax = le return
+ft_strcmp:                         				; ; s1 = rdi, s2 = rsi rax = le return
 				xor rcx, rcx					; met i a 0
 				xor rdx, rdx					; met tmp a 0
 loop:

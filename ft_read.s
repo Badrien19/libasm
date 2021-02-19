@@ -3,7 +3,8 @@
                 global ft_read
 
 ft_read:
-    xor rax, rax                    ;met rax à 0 // syscall 0 read 1 write
+    ;xor rax, rax                    ;met rax à 0 // syscall 0 read 1 write
+    mov rax, 0x00 ;
     syscall                         ;
     cmp rax, 0                      ;
     jl error                        ;si inférieur à 0
@@ -11,8 +12,8 @@ ft_read:
 
 error:
     neg rax                         ;negatif un negatif -> positif
-    push rax                        ;
+    mov rdi, rax                    ;
     call __errno_location wrt ..plt ;
-    pop rax                         ;
+    mov [rax], rdi                  ; [] --> derefence, pour modifer la valeur et non l'adresss
     mov rax, -1                     ;
     ret                             ;

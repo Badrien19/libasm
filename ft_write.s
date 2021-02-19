@@ -13,6 +13,6 @@ error:
     neg rax                         ;negatif un negatif -> positif
     push rax                        ;
     call __errno_location wrt ..plt ;
-    pop rax                         ;
+    pop qword [rax]                 ; cast 64byte
     mov rax, -1                     ;
     ret                             ;
