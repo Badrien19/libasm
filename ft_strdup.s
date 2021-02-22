@@ -9,7 +9,7 @@ ft_strdup:
             jl error                ; si infieur a 0
             push rdi                ; save initial str
             call ft_strlen          ; len of rdi in rax
-            add rax, 1              ; + \n
+            add rax, 1              ; + \0
             mov rdi, rax            ; rdi = first arg
             call malloc wrt ..plt
             pop r9

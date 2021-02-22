@@ -12,7 +12,7 @@ ft_read:
 
 error:
     neg rax                         ;negatif un negatif -> positif
-    mov rdi, rax                    ;
+    mov rdi, rax                    ;rdi est tout dessus la stack
     call __errno_location wrt ..plt ;
     mov [rax], rdi                  ; [] --> derefence, pour modifer la valeur et non l'adresss
     mov rax, -1                     ;

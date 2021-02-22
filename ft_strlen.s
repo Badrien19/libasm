@@ -1,5 +1,5 @@
 				section .text
-				global ft_strlen	; _ft_strlen for mac
+				global ft_strlen		; _ft_strlen for mac
 
 ft_strlen:
 				xor rax, rax			; setup rax à 0
